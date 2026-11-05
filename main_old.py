@@ -16,7 +16,8 @@ app = FastAPI(title="Exam Marking API with OCR")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Gemini endpoint (model = gemini-2.0-flash)
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REMOVED_ROTATE_CREDENTIAL"
+GEMINI_API_KEY = os.environ['GEMINI_API_KEY']
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
 
 # from fastapi import FastAPI, File, UploadFile, HTTPException
 # from app.ocr_utils import ocr_image, ocr_pdf

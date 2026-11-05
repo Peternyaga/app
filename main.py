@@ -20,8 +20,9 @@ if not GEMINI_API_KEY:
     raise RuntimeError("Please set GEMINI_API_KEY environment variable")
 
 # Use the model endpoint as appropriate. Prefer Authorization header if supported.
+GEMINI_API_KEY = os.environ['GEMINI_API_KEY']
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REMOVED_ROTATE_CREDENTIAL"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
 
 
 # LLM generation config defaults
